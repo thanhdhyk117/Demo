@@ -24,6 +24,12 @@ int main(){
 			match = match + 2;
 		if(b == c)
 			match = match + 3;
+		if(a*a == b*b + c*c)
+			match = match + 4;
+		if(b*b == a*a + c*c)
+			match = match + 5;
+		if(c*c == b*b + a*a)
+			match = match + 6;
 		if(match == 0)
 			if((a+b) <= c)
 				fout<<"Khong tao duoc tam giac tu a,b,c";
@@ -31,13 +37,22 @@ int main(){
 				fout << "Khong tao duoc tam giac tu a,b,c";
 			else if((a+c) <= b) 
 				fout <<"Khong tao duoc tam giac tu a,b,c";
-			else printf("Tao duoc tam giac tu a,b,c");
+			else
+				printf("Tao duoc tam giac tu a,b,c");
+		else if (a + c <= b || a + b <= c || b + c <= a)		
+		{
+			fout <<"Khong tao duoc tam giac tu a,b,c"; 
+		}
 		else
-		if(match == 1)
-			if((a+c) <= b)
-				fout <<"Khong tao duoc tam giac tu a,b,c"; 
-			else fout <<"Tam giac can tai C";
-		else
+		{
+			switch(match)
+			{
+				case 1:
+					fout <<"Tam giac can tai C";
+					break;
+				
+			}
+		}
 		if(match == 2) 
 			if((a+c) <= b)
 				fout <<"Khong tao duoc tam giac tu a,b,c"; 
@@ -48,6 +63,7 @@ int main(){
 			else
 				fout <<"Tam giac can tai A";
 		else fout <<"Tam giac deu";
+		
 		return 0;
 	}
 	
